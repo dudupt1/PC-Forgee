@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import { useBuild } from "../contexts/BuildContext";
+import { generateBuild } from "../services/buildEngineV2";
 
 type Component = {
   type: string;
@@ -8,7 +10,13 @@ type Component = {
 
 export default function Result() {
   const navigate = useNavigate();
+  const { build: userBuild } = useBuild();
 
+const generated = generateBuild({
+  budget: userBuild.budget,
+  wifi: userBuild.wifi,
+  rgb: userBuild.rgb,
+});
   const build: Component[] = [
     {
       type: "CPU",
