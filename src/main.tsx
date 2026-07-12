@@ -13,3 +13,13 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     </BrowserRouter>
   </React.StrictMode>
 ); 
+
+import { BuildProvider } from "./contexts/BuildContext";
+
+<React.StrictMode>
+  <BrowserRouter>
+    <BuildProvider>
+      <App />
+    </BuildProvider>
+  </BrowserRouter>
+</React.StrictMode>
