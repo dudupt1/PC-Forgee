@@ -17,43 +17,48 @@ const generated = generateBuild({
   wifi: userBuild.wifi,
   rgb: userBuild.rgb,
 });
-  const build: Component[] = [
-    {
-      type: "CPU",
-      name: "AMD Ryzen 7 7800X3D",
-      price: 350,
-    },
-    {
-      type: "GPU",
-      name: "NVIDIA GeForce RTX 5070",
-      price: 600,
-    },
-    {
-      type: "RAM",
-      name: "32GB DDR5 6000MHz",
-      price: 110,
-    },
-    {
-      type: "SSD",
-      name: "1TB NVMe SSD",
-      price: 70,
-    },
-    {
-      type: "Motherboard",
-      name: "B650 WiFi",
-      price: 150,
-    },
-    {
-      type: "Fonte",
-      name: "750W 80+ Gold",
-      price: 100,
-    },
-    {
-      type: "Caixa",
-      name: "ATX Airflow RGB",
-      price: 90,
-    },
-  ];
+const build = [
+  {
+    type: "CPU",
+    name: generated.cpu.name,
+    price: generated.cpu.price,
+  },
+  {
+    type: "GPU",
+    name: generated.gpu.name,
+    price: generated.gpu.price,
+  },
+  {
+    type: "Motherboard",
+    name: generated.motherboard.name,
+    price: generated.motherboard.price,
+  },
+  {
+    type: "RAM",
+    name: generated.ram.name,
+    price: generated.ram.price,
+  },
+  {
+    type: "SSD",
+    name: generated.ssd.name,
+    price: generated.ssd.price,
+  },
+  {
+    type: "Fonte",
+    name: generated.psu.name,
+    price: generated.psu.price,
+  },
+  {
+    type: "Cooler",
+    name: generated.cooler.name,
+    price: generated.cooler.price,
+  },
+  {
+    type: "Caixa",
+    name: generated.case.name,
+    price: generated.case.price,
+  },
+];
 
   const total = build.reduce(
     (sum, item) => sum + item.price,
