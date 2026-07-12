@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useBuild } from "../contexts/BuildContext";
 
 export default function Preferences() {
   const navigate = useNavigate();
+  const { build, setBuild } = useBuild();
 
   const [purpose, setPurpose] = useState("");
   const [wifi, setWifi] = useState(false);
