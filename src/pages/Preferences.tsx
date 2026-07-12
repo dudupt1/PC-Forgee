@@ -91,12 +91,22 @@ export default function Preferences() {
           </button>
 
 
-          <button
-            onClick={() => navigate("/result")}
-            className="bg-green-600 rounded-xl py-4 font-semibold"
-          >
-            Gerar PC
-          </button>
+<button
+  onClick={() => {
+    setBuild({
+      ...build,
+      purpose,
+      wifi,
+      bluetooth,
+      rgb,
+    });
+
+    navigate("/result");
+  }}
+  className="bg-green-600 rounded-xl py-4 font-semibold"
+>
+  Gerar PC
+</button>
 
         </div>
 
